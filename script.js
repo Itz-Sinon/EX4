@@ -5,11 +5,6 @@ let input = getInput();
 checkInput(input);
 
 function splitInput() {
-  if (inputContent.value == "") {
-    alert("Enter input");
-    return false;
-  }
-
   localStorage.setItem("string", inputContent.value);
 
   checkInput(inputContent.value);
@@ -22,14 +17,19 @@ function getInput() {
 function checkInput(text) {
   inputContent.innerHTML = text;
   const sens = text.split(". ");
-  document.getElementById("sen").innerHTML = sens.length;
+  sens.forEach((sen) => {
+    if (sen == "") {
+      sens.length -= 1;
+    }
+  })
+  document.getElementById("sen").innerHTML = sens.length + " sentences";
   const words = text.split(" ");
   words.forEach((word) => {
     if (word == "") {
       words.length -= 1;
     }
   });
-  document.getElementById("word").innerHTML = words.length;
+  document.getElementById("word").innerHTML = words.length + " words";
   const letters = text.split("");
-  document.getElementById("letter").innerHTML = letters.length;
+  document.getElementById("letter").innerHTML = letters.length + " characters";
 }

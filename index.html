@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Word Counter</title>
-</head>
-<body>
-    <textarea name="input" id="Text-input" oninput="splitInput()"></textarea>
-    <p id="sen"></p>
-    <p id="word"></p>
-    <p id="letter"></p>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="montserrat">
+    <h1>Word Count</h1>
+    <p>Enter you text below and see your current word count!</p>
+    <textarea name="input" id="Text-input" oninput="splitInput()" class="montserrat"></textarea>
+    <div id="result">
+      <p id="sen"></p>
+      <p id="word"></p>
+      <p id="letter"></p>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
