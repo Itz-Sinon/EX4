@@ -16,12 +16,19 @@ function getInput() {
 
 function checkInput(text) {
   inputContent.innerHTML = text;
+  const paras = text.split("\n");
+  paras.forEach((para) => {
+    if (para == "") {
+      paras.length -= 1;
+    }
+  });
+  document.getElementById("para").innerHTML = paras.length + " paragraphs";
   const sens = text.split(". ");
   sens.forEach((sen) => {
     if (sen == "") {
       sens.length -= 1;
     }
-  })
+  });
   document.getElementById("sen").innerHTML = sens.length + " sentences";
   const words = text.split(" ");
   words.forEach((word) => {

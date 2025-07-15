@@ -33,7 +33,7 @@ p {
 }
 #Text-input {
     width: 80%;
-    height: 100px;
+    min-height: 200px;
     padding: 10px 12px;
     font-size: 20px;
     resize: none;
@@ -44,4 +44,11 @@ p {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #result {
+        display: grid;
+        grid-template: repeat(2, 50%) / repeat(2, 50%);
+    }
 }
